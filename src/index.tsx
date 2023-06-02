@@ -10,13 +10,13 @@ import { useState } from 'react'
 function AppProvider() {
   // Setting the state to pass down the languages as props to the components: 
   const initialState = [{name: 'Succession', rating: 1}]
-  const [show, setShow] = useState(initialState)
+  const [shows, setShows] = useState(initialState)
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<App/>}>
-        <Route index element={<List show={show}/>}/>
-        <Route path="add" element={<Form setShow={setShow}/>}/>
+        <Route index element={<List shows={shows}/>}/>
+        <Route path="add" element={<Form setShows={setShows}/>}/>
       </Route>
     )
   )
